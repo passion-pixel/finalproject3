@@ -1,7 +1,5 @@
-# finalproject3
 
-
-# Take Me There
+# Final Project 3
 URL: https://
 Name: “Final Project 3”
 Genre: Tech/Web Development/Resources/Bay Area/ Native & Xicana

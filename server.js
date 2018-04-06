@@ -7,7 +7,7 @@ app.use(express.static('public'));
 
 //Routes
 app.get("/", function(request, response) {
-  response.send('Was good World');
+  res.sendFile('views/index.html' , { root: __dirname});
 });
 
 
