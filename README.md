@@ -29,9 +29,8 @@ Show / Profile Page
 Extend the features of this app to fields outside of web development
 Expand MVP to include users interaction on app. Many to many relationship
 Provide user with option to search on landing page without log in
-Full CRUD features for favorite locations
-Users can view other user’s favorite locations
-Responsive design
+Full CRUD features for saved organizations
+
 
 ## Collaborators
 Natalie Contreras
