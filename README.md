@@ -2,7 +2,9 @@
 # Final Project 3
 URL: https://
 Name: “Final Project 3”
+
 Genre: Tech/Web Development/Resources/Bay Area/ Native & Xicana
+
 Users: Bay Area/ Native & Xicana - interested in finding tech resources
 Bay Area Native/ Xicana - local resident who is seeking interested in the tech field and is not necesarrily represented demographically in the surrounding tech companies, our easy to use app enables user to find resources.
 
