@@ -1,0 +1,11 @@
+<div class="navbar">
+  <nav class="card-panel deep red accent-3">
+    <% if(!user){ %>
+      <div id="signupspan"><a href="/login">Log in | </a>
+      <a href="/signup">Sign up</a></div>
+    <% } else { %>
+      <div id="navspan"><span id="welcomespan">Welcome, <%= user.username %>! </span>
+        <span id="loginspan"><a href="/">Home | </a><a href="/about">About | </a><a href="/profile">Profile | </a><a href="/map">Resources | </a><a href="/map">Events | </a><a href="/map">Contact | </a><a href="/logout">Log out</a></span></div>
+    <% } %>
+  </nav>
+</div>

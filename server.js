@@ -55,7 +55,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-//create form /// create where to make comment 
+//create form /// create where to make comment
 
 // HOMEPAGE ROUTE
 
@@ -91,6 +91,28 @@ app.post("/signup", function (req, res) {
 app.get("/login", function (req, res) {
   res.render("login");
 });
+
+// // if login show profile - check out with Steph/ Kay/ Justin
+// app.get('/profile', function (req, res) {
+//   if(!req.user){
+//     res.redirect('/login');
+//   }
+//   db.User.findOne({'_id' : req.user._id})
+//     .populate('landmark')
+//     .exec(function(err, currUser){
+//       if(err){
+//         console.log("Error finding user in database");
+//         res.render('login');
+//       }
+//       if(currUser.landmark.length > 0){
+//         console.log(currUser.landmark);
+//         res.render("profile", {user: req.user, currUser: currUser, favs: currUser.landmark});
+//       }
+//       else {
+//         console.log("currUser has no favorites yet");
+//       }
+//   });
+// });
 
 // log in user
 app.post("/login", passport.authenticate("local"), function (req, res) {
