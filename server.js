@@ -57,8 +57,7 @@ app.use(function(req, res, next) {
 
 //create form /// create where to make comment
 
-// HOMEPAGE ROUTE
-
+// HOMEPAGE INDEX.ejs ROUTE
 app.get("/", function (req, res) {
   Post.find(function (err, allPosts) {
     if (err) {
@@ -186,7 +185,7 @@ app.delete("/posts/:id", function (req, res) {
 
   // find post in db by id and remove
   Post.findOneAndRemove({ _id: postId, }, function () {
-    res.redirect("/");
+    res.redirect("/forum");
   });
 });
 
@@ -203,9 +202,14 @@ app.get("/api/posts", function (req, res) {
   });
 });
 
-// create new post
+// // create new post
 app.post("/api/posts", function (req, res) {
   // create new post with form data (`req.body`)
+  console.log("this is req.body!", req.body);
+  console.log("posting a new forum question");
+  var postAuthor = req.user
+  console.log("this is the post author!!", postAuthor)
+
   var newPost = new Post(req.body);
 
   // save new post in db
@@ -213,7 +217,7 @@ app.post("/api/posts", function (req, res) {
     if (err) {
       res.status(500).json({ error: err.message, });
     } else {
-      res.json(savedPost);
+      res.redirect('/forum');
     }
   });
 });
@@ -263,6 +267,12 @@ app.put("/api/posts/:id", function (req, res) {
   });
 });
 
+app.get('/showmeUsers', function(req, res){
+  User.find({}, function(err, succ){
+    res.json(succ);
+  })
+})
+
 // delete post
 app.delete("/api/posts/:id", function (req, res) {
   // get post id from url params (`req.params`)
@@ -288,13 +298,50 @@ app.get('/', function(req, res) {
 
 // About
 app.get('/about', function (req, res) {
-  res.render('about');
+  res.render('about', { user: req.user, });
 });
 
 app.get('/', function(req, res) {
   res.render("index", { posts: allPosts, user: req.user });
 });
 
+// Profile
+app.get('/profile', function (req, res) {
+  res.render('profile', { user: req.user, });
+});
+
+// Resources
+app.get('/resources', function (req, res) {
+  res.render('resources', { user: req.user, });
+});
+
+
+// Forum
+app.get('/forum', function (req, res) {
+  console.log("this is req.user", req.user);
+  Post.find(function(err, allPosts){
+    if(err){
+      res.status(500).json({error: err.message});
+    } else {
+      console.log(allPosts)
+      res.render('forum', {posts: allPosts, user:req.user});
+    }
+  });
+});
+
+// app.post('/forum', function (req, res) {
+//   console.log("this is req.user", req.user);
+//   var newPost = new Post(req.body);
+//
+//   // save new post in db
+//   newPost.save(function (err) {
+//     if (err) {
+//       res.status(500).json({ error: err.message, });
+//     } else {
+//       res.redirect("/forum");
+//     }
+//   });
+// });
 
 /////////////////
 // SERVER START

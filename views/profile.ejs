@@ -2,57 +2,112 @@
 <html>
 
 <head>
-  <title>Profile</title>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <!-- set viewport to device width to make site responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <!-- bootstrap css -->
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-    <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- custom styles -->
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
 
-   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
-  <!--Let browser know website is optimized for mobile-->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
+  <!-- bootstrap js -->
+  <!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJwf9SISzx0464yybWIMGSDFNNxA8Dtv8&callback=initMap">
-  </script>
-  <script src="/scripts/app.js"></script>
-  <link rel="stylesheet" href="/styles/main.css">
-  <!-- <script src="/scripts/unsplash.js"></script> -->
+  <!-- custom script -->
+  <script type="text/javascript" src="/scripts/app.js"></script>
 
+  <!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <title>App Name</title>
 </head>
 
 <body>
 
-  <%- include('./partials/nav', {user: user}); %>
+<header>
 
-<div class="container">
-  <h3>My Profile </h3>
-</div>
+</header>
+
+<main>
+
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="images/mark-basarab-122141-unsplash.jpg" width="100%" style="display: block;">
+    </div>
+
+    <div class="section no-pad-bot" id="index-banner">
+         <% include ../views/partials/nav %>
+      <div class="container">
+        <h1 class="header center orange-text">Profile</h1>
+        <h2 class="header center orange-text"></h2>
+
+        <div class="row center">
+          <h3 class="header white-text col s12 light"> .</h3>
+          <p class="white-text"></p>
 
 
-<div class="parallax-container">
-  <div class="parallax"><img src="images/travelbackpack.jpg"></div>
-  <div class="row center">
-    <p>My username: <%= currUser.username %></p>
-    <hr>
-    <h3>My Favorite Places</h3>
-      <ul id="favPlaces">
-        <% for(var i=0; i < favs.length; i++){ %>
-      <li> <%= favs[i].name %> </li>
-        <% } %>
-<!-- <li>Golden Gate Bridge</li> -->
-      </ul>
+<span id="loginspan">
+       <a href="/about" class="btn rosa ">Edit Profile</a>
+</span>
+
+        </div>
+
+
+      </div>
     </div>
   </div>
-  </div>
-</div>
 
-    <% include ../views/partials/footer %>
 
-</body>
-</html>
+
+
+            <div class="container">
+              <div class="section">
+                <div class="row">
+
+                  <div class="col s12 m4">
+                    <div class="icon-block">
+                      <h2 class="center light-orange-text"> <i class="fas fa-globe"></i></h2>
+                      <h5 class="center">Explore</h5>
+                      <p class="light"> Search for local tech resources and opportunities in your area</p>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div class="parallax-container">
+              <div class="parallax">
+                <img src="images/chris-coudron-133553-unsplash.jpg" width="100%" style="display: block;">
+              </div>
+              <div class="section no-pad-bot" id="index-banner">
+                <div class="container">
+                  <br />
+                  <br />
+                  <br>
+                  <h1 class="header center orange-text">--</h1>
+
+                  <div class="row center">
+                    <h3 class="header pink-text col s12 light"> Lorem.</h3>
+                    <p class="white-text">Lorem </p>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+       <br>
+       <br>

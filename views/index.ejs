@@ -18,32 +18,13 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-
-
-
 </head>
 
-<nav class="card-panel deep teal accent-2">
-  <% if(!user) { %>
-    <a href="/login"> Log In </a>
-    <a href="/signup"> Sign Up</a>
-
-      <span id="loginspan"><a href="/">Home | </a><a href="/about">About | </a><a href="/profile">Profile | </a><a href="/map">Resources | </a><a href="/map">Events | </a><a href="/map">Contact | </a><a href="/logout">Log out</a></span></div>
-
-  <% } else { %>
-    <div>Welcome, <%= user.username %>!</div>
-    <a href="/logout"> Log out </a>
-  <% } %>
-
-</nav>
-
-
-</head>
 
 <body>
 
   <header>
-    <% include ../views/partials/nav %>
+
   </header>
 
   <main>
@@ -52,21 +33,20 @@
        <div class="parallax">
          <img src="images/mark-basarab-122141-unsplash.jpg" width="100%" style="display: block;">
        </div>
+
        <div class="section no-pad-bot" id="index-banner">
+         <% include ../views/partials/nav %>
          <div class="container">
-           <br />
-           <br />
-           <br>
-           <h1 class="header center orange-text">Bay Area Native | Xicana</h1>
+           <h1 class="header center orange-text">Bay Area Native & Xicana</h1>
            <h2 class="header center orange-text">Tech Code-X</h2>
 
            <div class="row center">
              <h3 class="header white-text col s12 light"> Empowering Native & Xicana Women to create the future of technology</h3>
-             <p class="white-text">We're a community of WOC professionals in the tech industry hoping to inspire representation in tech through STEAM Education.</p>
+             <p class="white-text"></p>
 
 
 <span id="loginspan">
-          <a href="/community" class="btn rosa ">Meet the Community</a>
+          <a href="/about" class="btn rosa ">Learn More</a>
 </span>
 
            </div>
@@ -77,14 +57,25 @@
      </div>
 
 
+
+
      <div class="container">
        <div class="section">
+         <div class="row center">
+           <h4 class="orange-text">About</h4>
+           <h5 class="black-text">We're a community of WOC professionals in the tech industry hoping to inspire representation in tech through STEAM Education.</h5>
+           <p class="light"> Bay Area Native | Xicana Code-X is an online community of Indigenous Women designed to raise awareness among young Indigenous Women of Color and their families about opportunities and careers in techology. Bay Area Code-X uses the powerful stories of women in the field from diverse backgrounds, who are in technology fields, and recognize the power of innovation to change the world. By creating a community others interested in pursuing a similar career path this platform allows for women to see and relate to other women in the field. </p>
+
+           <span id="loginspan">
+                     <a href="/about" class="btn rosa ">About</a>
+           </span>
+
          <div class="row">
 
            <div class="col s12 m4">
              <div class="icon-block">
                <h2 class="center light-orange-text"> <i class="fas fa-globe"></i></h2>
-               <h5 class="center">Explore</h5>
+               <h5 class="center">Explore Resources</h5>
                <p class="light"> Search for local tech resources and opportunities in your area</p>
              </div>
            </div>
@@ -104,11 +95,12 @@
                <h2 class="center light-orange-text">
                  <i class="far fa-star"></i>
                </h2>
-               <h5 class="center">Connect with Mentors</h5>
+               <h5 class="center">Connect with Community</h5>
                <p class="light">As a user you can log in to your profile and ask a question on our community forum</p>
              </div>
            </div>
 
+         </div>
          </div>
        </div>
      </div>
@@ -120,7 +112,53 @@
      </div>
 
 
-   </main>
+
+
+     <div class="container">
+       <div class="section">
+         <div class="row center">
+           <h4 class="orange-text">About</h4>
+           
+
+           <span id="loginspan">
+                     <a href="/about" class="btn rosa ">About</a>
+           </span>
+
+         <div class="row">
+
+           <div class="col s12 m4">
+             <div class="icon-block">
+               <h2 class="center light-orange-text"> <i class="fas fa-globe"></i></h2>
+               <h5 class="center">Explore Resources</h5>
+               <p class="light"> Search for local tech resources and opportunities in your area</p>
+             </div>
+           </div>
+
+           <div class="col s12 m4">
+             <div class="icon-block">
+               <h2 class="center light-orange-text">
+                 <i class="far fa-user-circle"></i>
+               </h2>
+               <h5 class="center">Create an Account</h5>
+               <p class="light">Create an account to access and edit your user profile</p>
+             </div>
+           </div>
+
+           <div class="col s12 m4">
+             <div class="icon-block">
+               <h2 class="center light-orange-text">
+                 <i class="far fa-star"></i>
+               </h2>
+               <h5 class="center">Connect with Community</h5>
+               <p class="light">As a user you can log in to your profile and ask a question on our community forum</p>
+             </div>
+           </div>
+
+         </div>
+         </div>
+       </div>
+     </div>
+
 
 <!-- /////////////////////
 // Materialize Subscribe form//

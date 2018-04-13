@@ -1,1 +1,141 @@
-// form
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- set viewport to device width to make site responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <title>Bay Code-X</title>
+
+  <script type="text/javascript" script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" script src="/scripts/app.js"></script>
+
+    <!-- custom styles -->
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
+  <title>Post a Question</title>
+</head>
+
+<div class="parallax-container">
+  <div class="parallax">
+    <img src="images/mark-basarab-122141-unsplash.jpg" width="100%" style="display: block;">
+  </div>
+
+  <div class="section no-pad-bot" id="index-banner">
+         <% include ../views/partials/nav %>
+    <div class="container">
+      <h1 class="header center orange-text">Community Forum</h1>
+      <h2 class="header center orange-text"></h2>
+
+      <div class="row center">
+        <h3 class="header white-text col s12 light"> .</h3>
+        <p class="white-text"></p>
+
+
+<span id="loginspan">
+     <a href="/about" class="btn rosa ">Forum Index</a>
+</span>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<body>
+
+  <!-- header -->
+  <div class="well">
+    <div class="container">
+      <div class="page-header row center">
+        <h1>Post A Question</h1>
+        <h3> engage with community</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- page content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <div class="row center">
+
+        <!-- <% posts.forEach(function(post){ %>
+          <h1><%= post.question%></h1>
+          <p><%= post.description%></p>
+          <p><%= post.id %></p>
+        <% }) %> -->
+
+        <!-- new post form-->
+<form class="form-inline" id="create-post" method="POST" action="/api/posts">
+  <div class="form-group">
+    <input type="text" name="question" class="form-control" placeholder="Question" autofocus>
+  </div>
+  <div class="form-group">
+    <input type="text" name="description" class="form-control" placeholder="Description">
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-default" value="Add Post">
+  </div>
+</form>
+<br>
+
+
+
+  <!-- list of posts -->
+          <ul class="list-group" id="posts-list">
+
+            <% for (let post of posts) { %>
+                <li class="list-group-item post" data-id="<%= post._id %>">
+                  <!-- post label (title) -->
+                  <h5><a href="/posts/<%= post._id %>" class="label label-default"><%= post.question %></a></h5>
+                  <!-- post description -->
+                  <%= post.description %>
+                  <div class="pull-right">
+                    <!-- pencil icon to toggle update form -->
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#update-<%= post._id %>">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <!-- trash can icon to delete post -->
+                    <form action="/posts/<%= post._id %>" method="DELETE">
+                      <button>
+                        <span class="glyphicon glyphicon-trash"></span>
+                      </button>
+                    </form>
+                  </div>
+                  <!-- form to update post -->
+                  <div class="collapse" id="update-<%= post._id %>">
+                    <br>
+                    <form class="form-inline update-post" action="/posts/<%= post._id %>?_method=PUT" method="POST">
+                      <div class="form-group">
+                        <input type="text" name="question" class="form-control" placeholder="Question" value="<%= post.title %>">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" name="description" class="form-control" placeholder="Description" value="<%= post.description %>">
+                      </div>
+                      <div class="form-group">
+                        <input type="submit" class="btn btn-block btn-default" value="Update">
+                      </div>
+                    </form>
+                  </div>
+                </li>
+              <% } %>
+            </ul>
+           </div>
+         </div>
+       </div>
+
+             <footer>
+               <% include ../views/partials/footer %>
+             </footer>
+
+</body>
+</html>
