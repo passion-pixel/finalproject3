@@ -21,7 +21,7 @@
   <!-- custom script -->
   <script type="text/javascript" src="/scripts/app.js"></script>
 
-  <title>Express Microblog App</title>
+  <title>Forum</title>
 </head>
 <body>
 
@@ -29,7 +29,7 @@
   <div class="well">
     <div class="container">
       <div class="page-header">
-        <h1><a href="/" class="remove-link-style">Microblog <small>share your thoughts</small></a></h1>
+        <h1><a href="/" class="remove-link-style">Forum <small>Ask a Question</small></a></h1>
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@
                   <br>
                   <form class="form-inline update-post" action="/posts/<%= post._id %>?_method=PUT" method="POST">
                     <div class="form-group">
-                      <input type="text" name="title" class="form-control" placeholder="Title" value="<%= post.title %>">
+                      <input type="text" name="question" class="form-control" placeholder="Question" value="<%= post.title %>">
                     </div>
                     <div class="form-group">
                       <input type="text" name="description" class="form-control" placeholder="Description" value="<%= post.description %>">
@@ -79,5 +79,9 @@
       </div>
     </div>
   </div>
+
 </body>
+
+
+
 </html>
